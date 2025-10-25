@@ -1,15 +1,103 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:posversion1/config/route_name.dart';
+import 'package:posversion1/widgets/custom_app_bar.dart';
+import 'package:posversion1/widgets/custom_button.dart';
+import 'package:posversion1/widgets/custom_text_field.dart';
+import 'package:posversion1/widgets/custom_upload_field.dart';
 
-class UserProfile extends StatelessWidget {
+class UserProfile extends StatefulWidget {
   const UserProfile({super.key});
+
+  @override
+  State<UserProfile> createState() => _UserProfileState();
+}
+
+class _UserProfileState extends State<UserProfile> {
+  final _fullNameController = TextEditingController();
+  final _designationController = TextEditingController();
+  final _contactController = TextEditingController();
+  final _emailController = TextEditingController();
+  XFile? _profileImage;
+
+  Future<void> _pickProfileImage() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+    if (image != null) {
+      setState(() {
+        _profileImage = image;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-
-      ],),
+      backgroundColor: Colors.blue[50],
+      appBar: const CustomAppBar(title: 'Personal Info'),
+      body: Padding(
+        padding: const EdgeInsets.all(9),
+        child: Column(
+          children: [
+            Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                color: Colors.grey.shade200,
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(Icons.person, size: 30, color: Colors.grey),
+            ),
+            const SizedBox(height: 6),
+            const Text(
+              'Personal Details',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 4),
+            const Text(
+              'You can add personal details to strengthen the POS store profile.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 12, color: Colors.grey),
+            ),
+            const SizedBox(height: 20),
+            CustomTextField(
+              label: 'Store Full Name',
+              placeholder: 'Placeholder',
+              controller: _fullNameController,
+            ),
+            CustomTextField(
+              label: 'Store Designation',
+              placeholder: 'Placeholder',
+              controller: _designationController,
+            ),
+            CustomTextField(
+              label: 'Contact Number',
+              placeholder: 'Placeholder',
+              keyboardType: TextInputType.phone,
+              controller: _contactController,
+            ),
+            CustomTextField(
+              label: 'Email',
+              placeholder: 'Placeholder',
+              keyboardType: TextInputType.emailAddress,
+              controller: _emailController,
+            ),
+            CustomUploadField(
+              label: 'Profile Picture',
+              placeholder: 'Placeholder',
+              image: _profileImage,
+              onTap: _pickProfileImage,
+            ),
+            CustomButton(
+              text: 'Next',
+              onPressed: () {
+                Get.toNamed(MyPagesName.storeProfile);
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
