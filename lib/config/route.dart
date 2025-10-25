@@ -1,0 +1,9 @@
+class AppRoutes {
+  static routes() =>[
+
+
+
+
+
+];
+}
