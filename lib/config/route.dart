@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:posversion1/config/route_name.dart';
+import 'package:posversion1/view/auth/login.dart';
 import 'package:posversion1/view/auth/set_security.dart';
 import 'package:posversion1/view/auth/store_profile.dart';
 import 'package:posversion1/view/auth/user_profile.dart';
@@ -14,6 +15,7 @@ GetPage(name: MyPagesName.onboarding, page: () => const Onboarding()),
 GetPage(name: MyPagesName.userprofile, page: () => const UserProfile()),
 GetPage(name: MyPagesName.storeProfile, page: () => const StoreProfile()),
 GetPage(name: MyPagesName.setSecurity, page: () => const SetSecurity()),
+GetPage(name: MyPagesName.login, page: () => const Login()),
 // GetPage(name: MyPagesName.onboarding1, page: () => const Onboarding1()),
 
 

@@ -34,10 +34,10 @@ class _UserProfileState extends State<UserProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[50],
-      appBar: const CustomAppBar(title: 'Personal Info'),
+      backgroundColor: Colors.blue[30],
+      appBar: CustomAppBar(title: 'Personal Info'),
       body: Padding(
-        padding: const EdgeInsets.all(9),
+        padding: EdgeInsets.all(9),
         child: Column(
           children: [
             Container(
@@ -47,20 +47,20 @@ class _UserProfileState extends State<UserProfile> {
                 color: Colors.grey.shade200,
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.person, size: 30, color: Colors.grey),
+              child: Icon(Icons.person, size: 30, color: Colors.grey),
             ),
-            const SizedBox(height: 6),
-            const Text(
+            SizedBox(height: 6),
+            Text(
               'Personal Details',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 4),
-            const Text(
-              'You can add personal details to strengthen the POS store profile.',
+            SizedBox(height: 4),
+            Text(
+              'You can add personal details to\n strengthen the POS store profile.',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 12, color: Colors.grey),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
             CustomTextField(
               label: 'Store Full Name',
               placeholder: 'Placeholder',

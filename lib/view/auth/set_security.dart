@@ -1,6 +1,7 @@
 // lib/pages/set_security.dart
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/Get.dart';
+import 'package:posversion1/config/route_name.dart';
 import 'package:posversion1/widgets/custom_app_bar.dart';
 import 'package:posversion1/widgets/custom_button.dart';
 import 'package:posversion1/widgets/custom_dropdown.dart';
@@ -25,10 +26,10 @@ class _SetSecurityState extends State<SetSecurity> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[50],
-      appBar: const CustomAppBar(title: 'Set Security'),
+      backgroundColor: Colors.blue[40],
+      appBar: CustomAppBar(title: 'Set Security'),
       body: Padding(
-        padding: const EdgeInsets.all(9),
+        padding: EdgeInsets.all(9),
         child: Column(
           children: [
             Container(
@@ -38,10 +39,10 @@ class _SetSecurityState extends State<SetSecurity> {
                 color: Colors.grey.shade200,
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.lock, size: 30, color: Colors.grey),
+              child: Icon(Icons.lock, size: 30, color: Colors.grey),
             ),
-            const SizedBox(height: 16),
-            const Text(
+            SizedBox(height: 16),
+            Text(
               'App Login Secret Key',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
@@ -96,15 +97,13 @@ class _SetSecurityState extends State<SetSecurity> {
               onPressed: () {
                 showDialog(
                   context: context,
-                  barrierColor: Colors.black54, // Opaque background
+                  barrierColor: Colors.black54,
                   builder: (context) => AlertDialog(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                        20.0,
-                      ), // Rounded corners
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     content: SizedBox(
-                      width: 400, // Increased width to 400
+                      width: 400,
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -134,7 +133,7 @@ class _SetSecurityState extends State<SetSecurity> {
                           CustomButton(
                             text: 'Continue',
                             onPressed: () {
-                              // Get.toNamed(MyPagesName.setSecurity);
+                              Get.toNamed(MyPagesName.login);
                             },
                           ),
                         ],

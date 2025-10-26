@@ -37,10 +37,10 @@ class _StoreProfileState extends State<StoreProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[50],
-      appBar: const CustomAppBar(title: 'Create POS Store'),
+      backgroundColor: Colors.blue[40],
+      appBar:  CustomAppBar(title: 'Create POS Store'),
       body: Padding(
-        padding: const EdgeInsets.all(9),
+        padding:  EdgeInsets.all(9),
         child: Column(
           children: [
             Container(
@@ -50,20 +50,20 @@ class _StoreProfileState extends State<StoreProfile> {
                 color: Colors.grey.shade200,
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.store, size: 30, color: Colors.grey),
+              child:  Icon(Icons.store, size: 30, color: Colors.grey),
             ),
-            const SizedBox(height: 9),
-            const Text(
+             SizedBox(height: 5),
+             Text(
               "Let's Create Your New POS Store",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 4),
-            const Text(
+             SizedBox(height: 4),
+             Text(
               'You can Create your own POS store to\n manage all in POS store access.',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 12, color: Colors.grey),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
             Row(
               children: [
                 Expanded(
@@ -112,7 +112,7 @@ class _StoreProfileState extends State<StoreProfile> {
               image: _logoImage,
               onTap: _pickLogoImage,
             ),
-            const SizedBox(height: 4),
+            const SizedBox(height: 2),
             CustomButton(
               text: 'Next',
               onPressed: () {
