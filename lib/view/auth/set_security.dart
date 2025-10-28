@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/Get.dart';
 import 'package:posversion1/config/route_name.dart';
-import 'package:posversion1/widgets/custom_app_bar.dart';
-import 'package:posversion1/widgets/custom_button.dart';
-import 'package:posversion1/widgets/custom_dropdown.dart';
-import 'package:posversion1/widgets/custom_text_field.dart';
+import 'package:posversion1/widgets/app_bar.dart';
+import 'package:posversion1/widgets/button.dart';
+import 'package:posversion1/widgets/dropdown.dart';
+import 'package:posversion1/widgets/text_form_field.dart';
 import 'package:posversion1/widgets/password_suffix.dart';
 
 class SetSecurity extends StatefulWidget {

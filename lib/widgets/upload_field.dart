@@ -19,26 +19,26 @@ class CustomUploadField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 1),
+      padding:  EdgeInsets.only(bottom: 1),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             label,
-            style: const TextStyle(
+            style:  TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w500,
               color: Colors.black87,
             ),
           ),
-          const SizedBox(height: 1),
+           SizedBox(height: 1),
           GestureDetector(
             onTap: onTap,
             child: Container(
               width: double.infinity,
-              height: 42, // smaller height for compact look
+              height: 42,
               decoration: BoxDecoration(
-                color: Colors.white, // no border, just plain white background
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(6),
               ),
               child: image != null
@@ -52,7 +52,7 @@ class CustomUploadField extends StatelessWidget {
                       ),
                     )
                   : Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      padding:  EdgeInsets.symmetric(horizontal: 10),
                       child: Row(
                         children: [
                           Icon(
@@ -60,7 +60,7 @@ class CustomUploadField extends StatelessWidget {
                             color: Colors.grey.shade500,
                             size: 18,
                           ),
-                          const SizedBox(width: 6),
+                           SizedBox(width: 6),
                           Expanded(
                             child: Text(
                               placeholder ?? 'Upload Image',

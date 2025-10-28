@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:posversion1/widgets/custom_button.dart';
+import 'package:posversion1/config/route_name.dart';
+import 'package:posversion1/widgets/button.dart';
 import 'package:posversion1/widgets/mycolors.dart';
 import 'package:posversion1/widgets/myimages.dart';
 
@@ -113,7 +115,9 @@ class Login extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: CustomButton(
                 text: 'Login',
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(MyPagesName.dashboard);
+                },
                 isSubmit: true,
               ),
             ),
@@ -149,7 +153,7 @@ class Login extends StatelessWidget {
               child: Icon(Icons.fingerprint, color: AppColors.gray, size: 30),
             ),
             SizedBox(height: 40),
-             Text(
+            Text(
               'Version 1.15.25  by  POS offer',
               style: TextStyle(color: AppColors.gray, fontSize: 12),
             ),

@@ -49,7 +49,7 @@ class CustomDropdown extends StatelessWidget {
               fillColor: Colors.white,
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 12,
-                vertical: 8, // Reduced vertical padding to decrease height
+                vertical: 8,
               ),
             ),
           ),

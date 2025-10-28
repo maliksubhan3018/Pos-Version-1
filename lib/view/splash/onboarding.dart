@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:posversion1/config/route_name.dart';
 
-import 'package:posversion1/widgets/custom_button.dart';
+import 'package:posversion1/widgets/button.dart';
 import 'package:posversion1/widgets/myimages.dart';
 
 class Onboarding extends StatelessWidget {

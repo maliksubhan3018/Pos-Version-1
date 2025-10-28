@@ -53,10 +53,10 @@ class CustomTextField extends StatelessWidget {
               ),
               filled: true,
               fillColor: Colors.white,
-              isDense: true, // reduces default vertical padding
+              isDense: true,
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 8,
-                vertical: 6, // smaller vertical padding
+                vertical: 6,
               ),
               suffixIcon: suffixIcon,
             ),
