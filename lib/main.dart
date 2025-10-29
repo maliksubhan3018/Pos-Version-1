@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:posversion1/config/route.dart';
 import 'package:posversion1/config/route_name.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       getPages: AppRoutes.routes(),
-       initialRoute: MyPagesName.onboarding,
+      initialRoute: MyPagesName.onboarding,
       //home: const AllIn(), // ✅ Correct call
     );
   }

@@ -3,6 +3,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+import 'package:posversion1/view/setting/setting.dart';
 import 'package:posversion1/widgets/mycolors.dart';
 import 'package:posversion1/widgets/store_header.dart';
 
@@ -28,7 +29,7 @@ class _DashboardState extends State<Dashboard> {
       const Center(child: Text("Products Page")),
       const Center(child: Text("POS Page")),
       const Center(child: Text("Sales Page")),
-      const Center(child: Text("Settings Page")),
+      const Setting(),
     ];
   }
 
