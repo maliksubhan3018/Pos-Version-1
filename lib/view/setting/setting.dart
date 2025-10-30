@@ -1,7 +1,11 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:posversion1/widgets/list_tile.dart';
 import 'package:posversion1/widgets/mycolors.dart';
 import 'package:posversion1/widgets/myimages.dart';
+import 'package:posversion1/config/route_name.dart';
 
 class Setting extends StatelessWidget {
   const Setting({super.key});
@@ -11,9 +15,8 @@ class Setting extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blue[30],
       body: ListView(
-        padding: EdgeInsets.zero,
+        padding: const EdgeInsets.all(18),
         children: [
-          // User Profile Section
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(20.0),
@@ -22,9 +25,9 @@ class Setting extends StatelessWidget {
                 CircleAvatar(
                   radius: 40,
                   backgroundColor: Colors.amber,
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     radius: 38,
-                    backgroundImage: const AssetImage(MyImages.personimge),
+                    backgroundImage: AssetImage(MyImages.personimge),
                   ),
                 ),
                 const SizedBox(height: 12),
@@ -45,7 +48,6 @@ class Setting extends StatelessWidget {
             ),
           ),
 
-          // Main Menu Items
           CustomListTile(
             icon: Icons.person,
             title: 'User Profile',
@@ -54,6 +56,7 @@ class Setting extends StatelessWidget {
               size: 16,
               color: AppColors.gray,
             ),
+            onTap: () => Get.toNamed(MyPagesName.storeSetting),
           ),
           CustomListTile(
             icon: Icons.store,
@@ -63,12 +66,24 @@ class Setting extends StatelessWidget {
               size: 16,
               color: AppColors.gray,
             ),
+            onTap: () => Get.toNamed(MyPagesName.storeSetting),
           ),
-          const CustomListTile(
-            icon: Icons.other_houses,
-            title: 'OTHERS',
-            isHeader: true,
+
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'MORE ACTIONS',
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.gray,
+                ),
+              ),
+            ),
           ),
+
           CustomListTile(
             icon: Icons.dark_mode,
             title: 'Dark Mode',
@@ -77,6 +92,7 @@ class Setting extends StatelessWidget {
               onChanged: (value) {},
               activeColor: AppColors.blue,
             ),
+            onTap: () {},
           ),
           const CustomListTile(
             icon: Icons.info_outline,
@@ -86,8 +102,10 @@ class Setting extends StatelessWidget {
               size: 16,
               color: AppColors.gray,
             ),
+            onTap: null, // no action
           ),
-          const CustomListTile(
+
+          CustomListTile(
             icon: Icons.help_outline,
             title: 'Help & Support',
             trailing: Icon(
@@ -95,6 +113,7 @@ class Setting extends StatelessWidget {
               size: 16,
               color: AppColors.gray,
             ),
+            onTap: () => Get.toNamed(MyPagesName.helpSupport),
           ),
           const CustomListTile(
             icon: Icons.star,
@@ -104,6 +123,7 @@ class Setting extends StatelessWidget {
               size: 16,
               color: AppColors.gray,
             ),
+            onTap: null,
           ),
           const CustomListTile(
             icon: Icons.share,
@@ -113,6 +133,7 @@ class Setting extends StatelessWidget {
               size: 16,
               color: AppColors.gray,
             ),
+            onTap: null,
           ),
         ],
       ),

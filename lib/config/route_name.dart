@@ -9,4 +9,6 @@ class MyPagesName {
   static const String onboarding1 = "/Onboarding1";
   static const String login = "/Login";
   static const String dashboard = "/Dashboard";
+  static const String storeSetting = "/StoreSetting";
+  static const String helpSupport = "/HelpSupport";
 }

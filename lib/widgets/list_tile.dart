@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:posversion1/widgets/mycolors.dart';
 
 class CustomListTile extends StatelessWidget {
-  final IconData icon;
+  final IconData? icon;
+  final Color? iconColor;
   final String title;
   final Widget? trailing;
   final VoidCallback? onTap;
@@ -11,7 +12,8 @@ class CustomListTile extends StatelessWidget {
 
   const CustomListTile({
     super.key,
-    required this.icon,
+    this.icon,
+    this.iconColor,
     required this.title,
     this.trailing,
     this.onTap,
@@ -22,21 +24,14 @@ class CustomListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     if (isHeader) {
       return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
-        child: Row(
-          children: [
-            const SizedBox(width: 8),
-            Expanded(
-              child: Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.gray,
-                ),
-              ),
-            ),
-          ],
+        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+        child: Text(
+          title,
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+            color: AppColors.gray,
+          ),
         ),
       );
     } else {
@@ -48,15 +43,23 @@ class CustomListTile extends StatelessWidget {
         decoration: BoxDecoration(border: border),
         child: ListTile(
           contentPadding: const EdgeInsets.symmetric(
-            horizontal: 20.0,
+            horizontal: 16.0,
             vertical: 1.5,
           ),
-          leading: Icon(icon, color: AppColors.gray, size: 24),
+          leading: icon != null
+              ? Icon(icon, color: iconColor ?? AppColors.gray, size: 24)
+              : const SizedBox(width: 24),
           title: Text(
             title,
             style: const TextStyle(fontSize: 16, color: AppColors.black),
           ),
-          trailing: trailing ?? const SizedBox(),
+          trailing:
+              trailing ??
+              const Icon(
+                Icons.arrow_forward_ios,
+                size: 16,
+                color: AppColors.gray,
+              ),
           onTap: onTap,
         ),
       );
