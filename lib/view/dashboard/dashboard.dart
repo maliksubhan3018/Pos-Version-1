@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+import 'package:posversion1/view/innventory_v1/product.dart';
 import 'package:posversion1/view/setting/setting.dart';
 import 'package:posversion1/widgets/mycolors.dart';
 import 'package:posversion1/widgets/store_header.dart';
@@ -25,7 +26,7 @@ class _DashboardState extends State<Dashboard> {
   List<Widget> _buildScreens() {
     return [
       const _DashboardHome(),
-      const Center(child: Text("Products Page")),
+      const Product(),
       const Center(child: Text("POS Page")),
       const Center(child: Text("Sales Page")),
       const Setting(),
